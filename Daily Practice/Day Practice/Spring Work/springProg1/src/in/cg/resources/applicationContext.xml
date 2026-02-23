@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean class="in.cg.beans.Student" id="StdId">
+		<property name="id" value="1002"></property>
+		<property name="name" value="Arman"></property>
+		<property name="email" value="1807arman@gmail.com"></property>
+	</bean>
+	
+	<bean class="in.cg.beans.Student" id="StdId1">
+		<property name="id" value="1003"></property>
+		<property name="name" value="Sanat"></property>
+		<property name="email" value="SanatH@gmail.com"></property>
+	</bean>
+	<bean class="in.cg.beans.Address" id="ad1">
+		<property name="pincode" value="304502"></property>
+		<property name="locName" value="Gokul Niwas"></property>
+		<property name="State" value="Rajasthan"></property>
+	</bean>
+</beans>
