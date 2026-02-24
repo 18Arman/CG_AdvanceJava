@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        
+         <!-- bean definitions here -->
+	<bean class="in.cg.repository.BookRepository" id="bookRepository">
+		<constructor-arg>
+			<list>
+				<bean class="in.cg.model.Book">
+					<constructor-arg value="1"></constructor-arg>
+					<constructor-arg value="Why Not Me?"></constructor-arg>
+					<constructor-arg value="Anubhav Agarwal"> </constructor-arg>
+					<constructor-arg value="true"></constructor-arg>
+				</bean>
+				<bean class="in.cg.model.Book">
+					<constructor-arg value="2"></constructor-arg>
+					<constructor-arg value="Do Epic Shit"></constructor-arg>
+					<constructor-arg value="Ankur Warikoo"> </constructor-arg>
+					<constructor-arg value="true"></constructor-arg>
+				</bean>
+				<bean class="in.cg.model.Book">
+					<constructor-arg value="3"></constructor-arg>
+					<constructor-arg value="Atomic Habits"></constructor-arg>
+					<constructor-arg value="James"> </constructor-arg>
+					<constructor-arg value="false"></constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="in.cg.repository.MemberRepository" id="memberRepository">
+		<constructor-arg>
+			<list>
+				<bean class="in.cg.model.Member">
+					<constructor-arg value="1"></constructor-arg>
+					<constructor-arg value="Sanat"></constructor-arg>
+					<constructor-arg value="SanatkiMailId@kmail.cg"></constructor-arg>
+				</bean>
+				<bean class="in.cg.model.Member">
+					<constructor-arg value="2"></constructor-arg>
+					<constructor-arg value="Arman"></constructor-arg>
+					<constructor-arg value="ArmankiMailId@kmail.cg"></constructor-arg>
+				</bean>
+				<bean class="in.cg.model.Member">
+					<constructor-arg value="3"></constructor-arg>
+					<constructor-arg value="Saurabh"></constructor-arg>
+					<constructor-arg value="SaurabhkiMailId@kmail.cg"></constructor-arg>
+				</bean>
+			</list>
+		
+		</constructor-arg>
+	</bean>
+	<bean class="in.cg.service.BookService" id="bookService">
+		<constructor-arg ref="bookRepository"/>
+	</bean>
+	<bean class="in.cg.service.MemberService" id="memberService">
+		<constructor-arg ref="memberRepository"/>
+	</bean>
+	<bean class="in.cg.service.LibraryService" id="libraryService">
+		<constructor-arg ref="bookService"/>
+		<constructor-arg ref="memberService"/>
+	</bean>
+
+</beans>
