@@ -1,0 +1,19 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/18Arman/microservice-config.git	
+          default-label: main
+          clone-on-start: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
